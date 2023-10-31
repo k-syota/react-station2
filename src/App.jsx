@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ThreadList from "./components/ThreadList";
+import Header from "./components/Header";
 
 function App() {
   const [threads, setThreads] = useState([]);
@@ -26,25 +28,13 @@ function App() {
 
   return (
     <>
-      <div>
-        <header className=" bg-lime-400 py-3 flex justify-around">
-          <p className="text-center font-serif font-bold text-4xl">掲示板</p>
-          <button type="button" className="right-4 top-5">
-            スレッドを立てる
-          </button>
-        </header>
-      </div>
+      <Header />
       <div className="px-12 h-screen bg-gray-500">
         <div className="text-center p-4">
-          <p className="text-xl p-5">一覧</p>
+          <p className="text-2xl p-5 text-white">一覧</p>
           <ul>
             {threads.map((t) => (
-              <li
-                key={t.id}
-                className="font-bold p-2 cursor-pointer mb-2 bg-slate-200 rounded-md"
-              >
-                {t.title}
-              </li>
+              <ThreadList key={t.id} title={t.title} />
             ))}
           </ul>
         </div>
