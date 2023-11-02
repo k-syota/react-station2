@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import React from "react";
-import ThreadList from "./ThreadList";
-import Pagination from "./Pagination";
+import { ThreadList } from "./ThreadList";
+import { Pagination } from "./Pagination";
 
-const Top = () => {
+export const Top = () => {
   const [threads, setThreads] = useState([]);
   const [error, setError] = useState(null); // エラーステートを追加
   const [offset, setOffset] = useState(1);
@@ -50,5 +50,3 @@ const Top = () => {
     </>
   );
 };
-
-export default Top;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HeaderLink = () => {
+export const HeaderLink = () => {
   return (
     <>
       <div>
@@ -15,5 +15,3 @@ const HeaderLink = () => {
     </>
   );
 };
-
-export default HeaderLink;

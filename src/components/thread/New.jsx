@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const New = () => {
+export const New = () => {
   const [error, setError] = useState(null); // エラーステートを追加
   const [inputTitle, setInputTitle] = useState("");
 
@@ -57,5 +57,3 @@ const New = () => {
     </>
   );
 };
-
-export default New;

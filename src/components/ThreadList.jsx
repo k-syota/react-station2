@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ThreadList = (props) => {
+export const ThreadList = (props) => {
   const { id, title } = props;
   return (
     <>
@@ -13,5 +13,3 @@ const ThreadList = (props) => {
     </>
   );
 };
-
-export default ThreadList;

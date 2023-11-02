@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
-const PostList = (props) => {
+export const PostList = (props) => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null); // エラーステートを追加
   const [inputPost, setInputPost] = useState("");
@@ -103,5 +103,3 @@ const PostList = (props) => {
     </>
   );
 };
-
-export default PostList;

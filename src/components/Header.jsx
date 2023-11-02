@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderLink from "./HeaderLink";
+import { HeaderLink } from "./HeaderLink";
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <header className=" bg-lime-400 px-48 py-4 flex justify-between items-center">
@@ -11,5 +11,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
