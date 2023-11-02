@@ -8,7 +8,6 @@ const New = () => {
 
   const fetchInputTitle = (e) => {
     setInputTitle(e.target.value);
-    console.log(inputTitle);
   };
 
   const postData = async () => {
