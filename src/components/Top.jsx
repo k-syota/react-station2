@@ -43,7 +43,7 @@ const Top = () => {
       <p className="text-2xl p-5 text-white">スレッド一覧</p>
       <ul>
         {threads.map((t) => (
-          <ThreadList key={t.id} title={t.title} />
+          <ThreadList key={t.id} title={t.title} id={t.id} />
         ))}
       </ul>
       <Pagination prev={prevOffset} next={nextOffset} />
