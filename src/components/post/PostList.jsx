@@ -4,14 +4,13 @@ import { Link, useLocation, useParams } from "react-router-dom";
 
 export const PostList = (props) => {
   const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null); // エラーステートを追加
+  const [error, setError] = useState(null);
   const [inputPost, setInputPost] = useState("");
   const params = useParams();
   const location = useLocation();
   const threadTitle = location.state.title;
 
   useEffect(() => {
-    // 非同期関数を定義
     const getPostList = async () => {
       try {
         const response = await axios.get(
@@ -19,7 +18,6 @@ export const PostList = (props) => {
         );
         setPosts(response.data.posts);
       } catch (error) {
-        // エラーが発生した場合にエラーステートを更新
         setError("データの取得に失敗しました。");
         console.error(error);
       }
@@ -35,7 +33,7 @@ export const PostList = (props) => {
 
   const postData = async () => {
     try {
-      const response = await axios
+      await axios
         .post(
           `https://railway.bulletinboard.techtrain.dev/threads/${params.id}/posts`,
           {
@@ -47,7 +45,6 @@ export const PostList = (props) => {
           setInputPost("");
         });
     } catch (error) {
-      // エラーが発生した場合にエラーステートを更新
       setError("データの取得に失敗しました。");
       console.error(error);
     }

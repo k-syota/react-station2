@@ -1,31 +1,28 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import React from "react";
-import { ThreadList } from "./ThreadList";
+import { ThreadList } from "./thread/ThreadList";
 import { Pagination } from "./Pagination";
 
 export const Top = () => {
   const [threads, setThreads] = useState([]);
-  const [error, setError] = useState(null); // エラーステートを追加
-  const [offset, setOffset] = useState(1);
+  const [error, setError] = useState(null);
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    // 非同期関数を定義
-    const fetchData = async () => {
+    const getThreads = async () => {
       try {
         const response = await axios.get(
           `https://railway.bulletinboard.techtrain.dev/threads?offset=${offset}`
         );
         setThreads(response.data);
       } catch (error) {
-        // エラーが発生した場合にエラーステートを更新
         setError("データの取得に失敗しました。");
         console.error(error);
       }
     };
 
-    // fetchData関数を呼び出し
-    fetchData();
+    getThreads();
   }, [threads, offset]);
 
   const prevOffset = () => {

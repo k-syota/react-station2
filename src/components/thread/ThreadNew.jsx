@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const New = () => {
-  const [error, setError] = useState(null); // エラーステートを追加
+export const ThreadNew = () => {
+  const [error, setError] = useState(null);
   const [inputTitle, setInputTitle] = useState("");
 
   const fetchInputTitle = (e) => {
@@ -12,7 +12,7 @@ export const New = () => {
 
   const postData = async () => {
     try {
-      const response = await axios
+      await axios
         .post("https://railway.bulletinboard.techtrain.dev/threads", {
           title: inputTitle,
         })
@@ -21,7 +21,6 @@ export const New = () => {
           setInputTitle("");
         });
     } catch (error) {
-      // エラーが発生した場合にエラーステートを更新
       setError("データの取得に失敗しました。");
       console.error(error);
     }

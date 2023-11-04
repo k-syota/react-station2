@@ -1,8 +1,8 @@
 import { Header } from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { New } from "./components/thread/New";
+import { ThreadNew } from "./components/thread/ThreadNew";
 import { Top } from "./components/Top";
-import { PostList } from "./components/PostList";
+import { PostList } from "./components/post/PostList";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
             <div className="text-center p-4">
               <Routes>
                 <Route path="/" element={<Top />} />
-                <Route path="/thread/new" element={<New />} />
+                <Route path="/thread/new" element={<ThreadNew />} />
                 <Route path="/thread/:id" element={<PostList />} />
               </Routes>
             </div>
