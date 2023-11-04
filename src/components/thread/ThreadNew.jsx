@@ -6,7 +6,7 @@ export const ThreadNew = () => {
   const [error, setError] = useState(null);
   const [inputTitle, setInputTitle] = useState("");
 
-  const fetchInputTitle = (e) => {
+  const onChangeInputTitle = (e) => {
     setInputTitle(e.target.value);
   };
 
@@ -35,7 +35,7 @@ export const ThreadNew = () => {
           value={inputTitle}
           className="w-1/2 h-16 rounded-md px-10 text-lg"
           placeholder="タイトルを入力"
-          onChange={fetchInputTitle}
+          onChange={onChangeInputTitle}
         />
       </form>
       <div className="mt-4 flex items-center justify-evenly">

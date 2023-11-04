@@ -26,9 +26,8 @@ export const PostList = (props) => {
     getPostList();
   }, [posts]);
 
-  const fetchInputPost = (e) => {
+  const onChangeInputPost = (e) => {
     setInputPost(e.target.value);
-    console.log(inputPost);
   };
 
   const postData = async () => {
@@ -78,7 +77,7 @@ export const PostList = (props) => {
               name=""
               id=""
               value={inputPost}
-              onChange={fetchInputPost}
+              onChange={onChangeInputPost}
               placeholder="投稿しよう！"
             />
           </form>
